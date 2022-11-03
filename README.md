@@ -18,7 +18,7 @@ Behaviors to note:
 
 More specifics to notice about the target:
 
-- As usual, pay attention to the copy in buttons, links, labels, headings, etc — spelling, capitalization, punction.
+- As usual, pay attention to the copy in buttons, links, labels, headings, etc — spelling, capitalization, and punctuation matter.
 - The sign in page is located at `/user_sign_in`.
 - The sign up page is located at `/user_sign_up`.
 
