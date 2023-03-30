@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+  get("/", { :controller => "todos", :action => "index" })
 
   # Routes for the Todo resource:
 

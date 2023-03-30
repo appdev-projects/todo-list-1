@@ -1,0 +1,96 @@
+ <body>
+      <a href="/">Your todo list</a>
+      |
+      <a href="/edit_user_profile">Edit profile</a>
+      |
+      <a href="/user_sign_out">Sign out</a>
+
+    <h1>Your todo list</h1>
+
+<div>
+  <div>
+    <h2>
+      Add a new todo
+    </h2>
+
+    <form action="/insert_todo" method="post">
+      <div>
+        <label for="content_box">
+          Describe the task:
+        </label>
+
+        <input type="text" id="content_box" name="query_content">
+      </div>
+
+      <button>
+        Add to Next Up
+      </button>
+    </form>
+  </div>
+</div>
+
+<div class="next_up">
+  <h2>Next Up</h2>
+
+  <ul>
+      <li>
+        <div>You can&#39;t bypass the interface without hacking the auxiliary XML bus!</div>
+
+        <small>
+          Added 17 minutes ago
+
+          <a href="/delete_todo/176877">Delete</a>
+        </small>
+
+        <form action="/modify_todo/176877" method="post">
+          <input type="hidden" name="query_status" value="in_progress">
+          <button>Move to In Progress</button>
+        </form>
+      </li>
+  </ul>
+</div>
+
+<div class="in_progress">
+
+  <h2>In Progress</h2>
+
+  <ul>
+      <li>
+        <div>
+          Try to generate the JSON port, maybe it will index the multi-byte matrix!
+
+        </div>
+
+        <small>
+          Started less than a minute ago
+        
+          <a href="/delete_todo/176876">Delete</a>
+        </small>
+
+        <form action="/modify_todo/176876" method="post">
+          <input type="hidden" name="query_status" value="done">
+          <button>Move to Done</button>
+        </form>
+      </li>
+  </ul>
+</div>
+
+<div class="done">
+
+  <h2>Done</h2>
+
+  <ul>
+      <li>
+        <div>Parsing the application won&#39;t do anything, we need to navigate the digital ssl driver!</div>
+
+        <small>
+          Completed at 10:19pm on 30-Mar-2023
+
+          <a href="/delete_todo/176875">Delete</a>
+        </small>        
+      </li>
+  </ul>
+</div>
+
+  </body>
+</html>

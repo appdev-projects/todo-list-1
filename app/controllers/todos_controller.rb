@@ -4,7 +4,7 @@ class TodosController < ApplicationController
 
     @list_of_todos = matching_todos.order({ :created_at => :desc })
 
-    render({ :template => "todos/index.html.erb" })
+    render({ :template => "todos/todos_index.html.erb" })
   end
 
   def show
@@ -20,8 +20,8 @@ class TodosController < ApplicationController
   def create
     the_todo = Todo.new
     the_todo.content = params.fetch("query_content")
-    the_todo.status = params.fetch("query_status")
-    the_todo.user_id = params.fetch("query_user_id")
+    #the_todo.status = params.fetch("query_status")
+    #the_todo.user_id = params.fetch("query_user_id")
 
     if the_todo.valid?
       the_todo.save
