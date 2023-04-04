@@ -64,27 +64,32 @@
 
 
 <div class="in_progress">
+<!--/div-->
 
   <h2>In Progress</h2>
+    <div>
     <% @list_of_todos.each do |todos| %>
     <% if todos.status == "in_progress" %>
     <ul>
       <li>
        <%= todos.content %>
         <div>
-           Started <%= time_ago_in_words(todos.update_at) %>ago
+           Started <%= time_ago_in_words(todos.updated_at) %> ago
            <a href="/delete_todo/<%= todos.id %>">Delete</a>
          </div>
          <form action="/modify_todo/<%= todos.id %>" method="post">
          <input type="hidden" name="query_status" value="done">
          <button>Move to Done</button>
+         </form>
         </li>
      </ul>
       <% end %>
       <% end %>
    </div>
+   </div>
    <div class="done">
      <h2>Done</h2>
+     <div>
      <% @list_of_todos.each do |todos| %>
       <% if todos.status == "done" %>
       <ul>
@@ -92,16 +97,17 @@
       <%= todos.content %>
       <div>
 
-      <% t = todos.update_at %>
-      <%= t.time.strftime("Completed at %l:%M%P on %d-%b-%Y" ) %>
+      <% t = todos.updated_at %>
+      <%= t.strftime("Completed at %l:%M%P on %d-%b-%Y" ) %>
 
        <a href="/delete_todo/<%= todos.id %>">Delete</a>
         </div>
         <form action="/modify_todo/<%= todos.id %>" method="post">
          <input type="hidden" name="query_status" value="done">
          <button>Move to Done</button>
-         </li>
+         <!--/li>
         </ul>
    <% end %>
    <% end %>
-      </div>
+      </div--->
+      <% end %>
