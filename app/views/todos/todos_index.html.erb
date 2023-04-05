@@ -32,7 +32,7 @@
    <h2>Next Up</h2>
    <ul>
    <% @list_next_up.each do |todos3| %>
-   <li>
+   
     <!--% if todos3.status == "next_up" %-->
     <li>
     <div><%= todos3.content %></div>
@@ -40,7 +40,7 @@
     <small>
 
     Added<%=time_ago_in_words(todos3.created_at)%> ago
-    <a href="/delete_todo/<%= todos3.id %>">Delete </a>
+    <a href="/delete_todo/<%= todos3.id %>">Delete</a>
     </small>
     
     <form action="/modify_todo/<%= todos3.id %>" method="post">
@@ -80,7 +80,7 @@
       <%= todos3.content %>
       </div>
 
-      <% e = todos3.updated_at %>
+      <% e= todos3.updated_at %>
       <%= e.time.strftime("Completed at %l:%M%P on %d-%b-%Y") %>
 
        <a href="/delete_todo/<%= todos3.id %>">Delete</a>
