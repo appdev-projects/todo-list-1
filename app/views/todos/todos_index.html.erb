@@ -36,35 +36,30 @@
 </div>
 
 <div class="next_up">
+ 
   <h2>Next Up</h2>
+  <ul>
    <% @list_next_up.each do |todos1| %>
     <% if todos1.status == "next_up" %>
-    <div>
-    <ul>
     <li>
-    <%= todos1.content %>
     <div>
-    <%= time_ago_in_words(todos1.created_at) %> ago
-    <a href="/delete_todo/<%= todos1.id %>">Delete</a>
+    <%= todos1.content %>
     </div>
+
+    <small>Added<%= time_ago_in_words(todos1.created_at)%> ago
+    <a href="/delete_todo/<%= todos1.id %>">Delete</a>
+    </small>
+    
     <form action="/modify_todo/<%= todos1.id %>" method="post">
     <input type="hidden"  name="query_status" value="in_progress">
        <button>Move to In Progress</button>
         </form>
       </li>
-      
-  </ul>
+      </ul>
+      <%end%>
+      </div>
+<!--div class="in_progress">
 </div>
-
-<% end %>
-<% end %>
-
-</div>
-
-
-
-<div class="in_progress">
-<!--/div-->
 
   <h2>In Progress</h2>
     <div>
@@ -86,7 +81,7 @@
       <% end %>
       <% end %>
    </div>
-   </div>
+   </div-->
    <div class="done">
      <h2>Done</h2>
      <div>
@@ -94,20 +89,18 @@
       <% if todos.status == "done" %>
       <ul>
       <li>
-      <%= todos.content %>
       <div>
+      <%= todos.content %>
+      </div>
 
       <% t = todos.updated_at %>
-      <%= t.strftime("Completed at %l:%M%P on %d-%b-%Y" ) %>
+      <%= t.strftime("Completed at %l:%M%P on %d-%b-%Y")%>
 
        <a href="/delete_todo/<%= todos.id %>">Delete</a>
-        </div>
-        <form action="/modify_todo/<%= todos.id %>" method="post">
+        <!--form action="/modify_todo/<%= todos.id %>" method="post">
          <input type="hidden" name="query_status" value="done">
-         <button>Move to Done</button>
-         <!--/li>
+         <button>Move to Done</button--->
+         </li>
         </ul>
-   <% end %>
-   <% end %>
-      </div--->
-      <% end %>
+       <%end%>
+     </div>
