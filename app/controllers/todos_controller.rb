@@ -7,7 +7,7 @@ class TodosController < ApplicationController
     @in_progress = matching_todos.where({:status => "in_progress"})
     @done = matching_todos.where({:status =>"done"})
 
-    render({ :template => "todos/todos_index.html.erb" })
+    render({ :template => "todos/index.html.erb" })
   end
 
   def show
@@ -37,16 +37,15 @@ class TodosController < ApplicationController
   def update
     the_id = params.fetch("path_id")
     the_todo = Todo.where({ :id => the_id }).at(0)
-
-    #the_todo.content = params.fetch("query_content")
     the_todo.status = params.fetch("query_status")
-    #the_todo.user_id = params.fetch("query_user_id")
+    
+    the_todo.user_id = session.fetch(:user_id)
 
     if the_todo.valid?
       the_todo.save
-      redirect_to("/todos/#{the_todo.id}", { :notice => "Todo updated successfully."} )
+      redirect_to("/todos", { :notice => "Todo updated successfully."} )
     else
-      redirect_to("/todos/#{the_todo.id}", { :alert => the_todo.errors.full_messages.to_sentence })
+      redirect_to("/todos", { :alert => the_todo.errors.full_messages.to_sentence })
     end
   end
 
